@@ -1,0 +1,7 @@
+.def-font{
+	font-family: 'Nunito', sans-serif;
+}
+.box{
+	background-color: rgba(150,150,150,0.3);
+	text-align: center;
+}

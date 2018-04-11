@@ -1,0 +1,91 @@
+<!-- GWA Calculator
+v1.0.0 alpha
+Author: Kent Leo L. Makibulan
+-This app is intended to compute for the General Weighted Average (GWA) base from
+ the input of the user.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GWA Calculator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script>
+	  //Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAeLxt7P_d5o9PqVL3pi4O--qTMPFHLrlk",
+	    authDomain: "gwa-calculator.firebaseapp.com",
+	    databaseURL: "https://gwa-calculator.firebaseio.com",
+	    projectId: "gwa-calculator",
+	    storageBucket: "gwa-calculator.appspot.com",
+	    messagingSenderId: "796253468120"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<script>
+		function templateForm(){
+			var template = "";
+		}
+		function customForm(numberOfFields){
+			var template = "<div class=\"input-group\"><input type=\"text\" placeholder=\"Subject Grade\" class=\"form-control\"><input type=\"text\" placeholder=\"Unit\" class=\"form-control\"></div><p></p>";
+			var finalForm = "";
+			for (var i = 0; i < numberOfFields; i++){
+				finalForm = finalForm + template;
+			}
+			document.getElementById('templateForm').innerHTML = finalForm;
+		}
+		function fieldNum(){
+			var numberOfFields = prompt("Please input the number of subjects:", "0");
+			if(numberOfFields != null && numberOfFields != 0){
+				customForm(numberOfFields);
+			}
+		}
+	</script>
+</head>
+<body class="def-font">
+	<br>
+	<h1 class="text-center">GWA Calculator</h1>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box">
+				<p></p>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Templates
+				  </button>
+				  <div class="dropdown-menu">
+				    <a class="dropdown-item" href="#">Action</a>
+				    <a class="dropdown-item" href="#">Another action</a>
+				    <a class="dropdown-item" href="#">Something else here</a>
+				    <div class="dropdown-divider"></div>
+				    <a class="dropdown-item" onclick="fieldNum()">Custom</a>
+				  </div>
+				</div><p></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box" id="templateForm">
+				<input type="text" placeholder="Math" class="form-control"><p></p>
+				<input type="text" placeholder="Science Core" class="form-control"><p></p>
+				<div class="input-group">
+					<input type="text" placeholder="Subject" class="form-control">
+					<input type="text" placeholder="Unit" class="form-control">
+				</div><p></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box">
+				<button class="btn btn-outline-success">Calculate</button><p></p>
+			</div>
+		</div>
+	</div>
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</html>
