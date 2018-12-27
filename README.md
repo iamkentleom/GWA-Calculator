@@ -1,2 +1,2 @@
 # GWA-Calculator
-[Stopped] A web application that computes general weighted average.
+__On-going__ A web application that computes general weighted average.

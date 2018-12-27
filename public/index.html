@@ -10,9 +10,44 @@ Author: Kent Leo L. Makibulan
 	<title>GWA Calculator</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+</head>
+<body id="hel">
+	<div class="container-fluid">
+		<br>
+		<div class="row">
+			<div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12 align-self-center">
+				<div class="box">
+					<h2 class="text-center"><strong>GWA Calculator</strong></h2>
+					<br>
+					<div id="display"></div>
+					<div class="input-group mb-3" id="initial">
+						<input type="text" id="num-fields" class="form-control" placeholder="No. of course(s)" aria-label="No. of course(s)" aria-describedby="button-addon">
+						<div class="input-group-append">
+							<button class="btn btn-primary" type="button" id="button-addon">Proceed</button>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="box text-center">
+					<small>Copyright &copy; 2018 Kent Leo L. Makibulan. All rights reserved.</small>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+</body>
+<script src="index.js"></script>
+</html>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<script>
-	  //Initialize Firebase
 	  var config = {
 	    apiKey: "AIzaSyAeLxt7P_d5o9PqVL3pi4O--qTMPFHLrlk",
 	    authDomain: "gwa-calculator.firebaseapp.com",
@@ -22,70 +57,4 @@ Author: Kent Leo L. Makibulan
 	    messagingSenderId: "796253468120"
 	  };
 	  firebase.initializeApp(config);
-	</script>
-	<script>
-		function templateForm(){
-			var template = "";
-		}
-		function customForm(numberOfFields){
-			var template = "<div class=\"input-group\"><input type=\"text\" placeholder=\"Subject Grade\" class=\"form-control\"><input type=\"text\" placeholder=\"Unit\" class=\"form-control\"></div><p></p>";
-			var finalForm = "";
-			for (var i = 0; i < numberOfFields; i++){
-				finalForm = finalForm + template;
-			}
-			document.getElementById('templateForm').innerHTML = finalForm;
-		}
-		function fieldNum(){
-			var numberOfFields = prompt("Please input the number of subjects:", "0");
-			if(numberOfFields != null && numberOfFields != 0){
-				customForm(numberOfFields);
-			}
-		}
-	</script>
-</head>
-<body class="def-font">
-	<br>
-	<h1 class="text-center">GWA Calculator</h1>
-	<br>
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box">
-				<p></p>
-				<div class="btn-group">
-				  <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Templates
-				  </button>
-				  <div class="dropdown-menu">
-				    <a class="dropdown-item" href="#">Action</a>
-				    <a class="dropdown-item" href="#">Another action</a>
-				    <a class="dropdown-item" href="#">Something else here</a>
-				    <div class="dropdown-divider"></div>
-				    <a class="dropdown-item" onclick="fieldNum()">Custom</a>
-				  </div>
-				</div><p></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box" id="templateForm">
-				<input type="text" placeholder="Math" class="form-control"><p></p>
-				<input type="text" placeholder="Science Core" class="form-control"><p></p>
-				<div class="input-group">
-					<input type="text" placeholder="Subject" class="form-control">
-					<input type="text" placeholder="Unit" class="form-control">
-				</div><p></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1 box">
-				<button class="btn btn-outline-success">Calculate</button><p></p>
-			</div>
-		</div>
-	</div>
-</body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-</html>
+	</script> -->
